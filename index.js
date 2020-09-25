@@ -7,7 +7,7 @@ const {
 async function start(client) {
   client.onMessage(async (msg) => {
     // console.log(msg);
-    if (msg.bo@dy === "!cek") {
+    if (msg.body === "!cek") {
       client.sendText(msg.from, "👋 Hello! Inside Heartz In Here");
       client;
     } else if (msg.mimetype) {
