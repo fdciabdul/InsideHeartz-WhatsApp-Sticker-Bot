@@ -10,6 +10,9 @@ async function start(client) {
     if (msg.body === "!cek") {
       client.sendText(msg.from, "👋 Hello! Inside Heartz In Here");
       client;
+	} else if (msg.body.startsWith("!url ")) {
+	let url = msg.body.split(" ")[1];
+	await client.sendStickerfromUrl(msg.from, url);
     } else if (msg.mimetype) {
       if (msg.caption === "!stiker" && msg.type === "image") {
         const mediaData = await decryptMedia(msg);
