@@ -13,8 +13,8 @@ async function start(client) {
 	} else if (msg.body.startsWith("!url ")) {
 	let url = msg.body.split(" ")[1];
 	await client.sendStickerfromUrl(msg.from, url);
-	} else if (quotedMsg && quotedMsg.type == 'image') {
-	if (msg.body === "!stiker") {
+	} else if (msg.body === "!stiker") {
+	if (quotedMsg && quotedMsg.type == 'image') {
     const mediaData = await decryptMedia(quotedMsg);
     const imageBase64 = `data:${msg.mimetype};base64,${mediaData.toString(
           "base64"
